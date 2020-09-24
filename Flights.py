@@ -1,6 +1,6 @@
 import datetime, pytz
 
-class Flights():
+class Flight():
     def __init__(self, flight_data):
         self.flight_data = flight_data
         
@@ -35,7 +35,7 @@ class Flights():
         self.deep_link= self.flight_data["deep_link"]
     
     def get_duration(self):
-        self.duration = self.flight_data["duration"]
+        self.duration = self.flight_data["fly_duration"]
         
     def get_transfers(self):
         if self.flight_data["transfer"] == []:
