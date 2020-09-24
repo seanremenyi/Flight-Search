@@ -1,14 +1,8 @@
 import requests
+import json
 
-url = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/AU/AUD/en-US/MEL-sky/SYD-sky/2020-11-03"
+response = requests.get("https://api.skypicker.com/flights?flyFrom=PRG&to=LGW&curr=AUD&dateFrom=18/11/2020&dateTo=12/12/2020&partner=picky&v=3")
 
-querystring = {"inboundpartialdate":"2020-12-05"}
+data = json.loads(response.text)
 
-headers = {
-    'x-rapidapi-host': "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
-    'x-rapidapi-key': "fa98bed2d4mshbf19405106ccc0bp14c91djsn9fe248ea1d29"
-    }
-
-response = requests.request("GET", url, headers=headers, params=querystring)
-
-print(response.text)
+print(data)
