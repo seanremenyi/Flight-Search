@@ -3,6 +3,18 @@ import datetime, pytz
 class Flight():
     def __init__(self, flight_data):
         self.flight_data = flight_data
+        self.get_origin()
+        self.get_destination()
+        self.get_price()
+        self.get_departure_time_UTC()
+        self.get_departure_time()
+        self.get_arrival_time_UTC()
+        self.get_arrival_time()
+        self.get_deep_link()
+        self.get_duration()
+        self.get_transfers()
+        self.get_routes()
+        self.get_airlines()
         
     def get_origin(self):
         self.origin = f'{self.flight_data["cityFrom"]}, {self.flight_data["countryFrom"]["name"]}' 
@@ -38,10 +50,10 @@ class Flight():
         self.duration = self.flight_data["fly_duration"]
         
     def get_transfers(self):
-        if self.flight_data["transfer"] == []:
+        if self.flight_data["transfers"] == []:
             self.transfer = "No transfer"
         else:
-            self.transfer = self.flight_data["transfer"]
+            self.transfer = self.flight_data["transfers"]
             
     def get_routes(self):
         self.routes = self.flight_data["routes"]

@@ -16,36 +16,15 @@ response = requests.get(f"https://api.skypicker.com/flights?flyFrom=MEL&to=SYD&c
 
 data = json.loads(response.text)
 
+# g=[enumerate(Flight(flights)) for flights in data["data"]]
+# print(g)
+    
+
+for flights in data["data"]:
+    Itinerary.add_flight(Flight(flights))
 
 
-# print(data["data"][0])
-
-flight1=Flight(data["data"][0])
-flight1.get_origin()
-flight1.get_destination()
-flight1.get_price()
-flight1.get_departure_time_UTC()
-flight1.get_departure_time()
-flight1.get_arrival_time_UTC()
-flight1.get_arrival_time()
-flight1.get_deep_link()
-flight1.get_duration()
-flight1.get_airlines()
-flight1.get_routes()
-# print(flight1.origin)
-# print(flight1.destination)
-# print(flight1.price)
-# # print(flight1.departure_time_UTC)
-# print(flight1.departure_time)
-# # print(flight1.arrival_time_UTC)
-# print(flight1.arrival_time)
-# # print(flight1.deep_link)
-# print(flight1.duration)
-# print(flight1.airlines)
-# print(flight1.routes)
-
-Itinerary.add_flight(flight1)
-print(Itinerary.itineraries[0].origin)
+print(Itinerary.itineraries)
 
 # for items in data["data"]:
 #     print(f'From {items["cityFrom"]}, {items["countryFrom"]["name"]} to {items["cityTo"]}, {items["countryTo"]["name"]} for {items["price"]}')
