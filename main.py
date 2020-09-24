@@ -27,6 +27,27 @@ class Flights():
 
     def get_arrival_time(self):
         self.arrival_time = self.convert_timestamp(self.flight_data['aTimeUTC'])    
+
+    def get_deep_link(self):
+        self.deep_link= self.flight_data["deep_link"]
+    
+    def get_duration(self):
+        self.duration = self.flight_data["duration"]
+        
+    def get_transfers(self):
+        if self.flight_data["transfer"] == []:
+            self.transfer = "No transfer"
+        else:
+            self.transfer = self.flight_data["transfer"]
+            
+    def get_routes(self):
+        self.routes = self.flight_data["routes"]
+
+    def get_airlines(self):
+        self.airlines = self.flight_data["airlines"]
+    
+
+
 # origin = input("Where are you flying from?\n")
 # destination= input("Where would you like to go\n")
 # strarting_range= input("Looking at flights from the date?\n")
@@ -38,9 +59,11 @@ response = requests.get(f"https://api.skypicker.com/flights?flyFrom=MEL&to=SYD&c
 
 data = json.loads(response.text)
 
-flight1=Flights(data["data"][0])
-flight1.get_departure_time()
-print(flight1.departure_time)
+print(data["data"][0])
+
+# flight1=Flights(data["data"][0])
+# flight1.get_departure_time()
+# print(flight1.departure_time)
 
 # for items in data["data"]:
 #     print(f'From {items["cityFrom"]}, {items["countryFrom"]["name"]} to {items["cityTo"]}, {items["countryTo"]["name"]} for {items["price"]}')
