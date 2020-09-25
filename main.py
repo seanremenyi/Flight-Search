@@ -9,9 +9,7 @@ for flights in new_query.query_results:
 
 Itinerary.list_results()
 
-user_input = input("\n\nWhich Flight would you like? enter reference num\n\n")
-
-Itinerary.choice(int(user_input))
+Itinerary.choose_flight()
 
 
 

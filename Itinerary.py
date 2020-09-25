@@ -15,15 +15,17 @@ class Itinerary():
             cls.display_format(items)
 
     @classmethod
-    def choice(cls):
-        user_input = input("Which Flight would you like to choose?\nEnter the reference number")
+    def choose_flight(cls):
+        user_input = input("\n\nWhich Flight would you like to choose?\nEnter the reference number\n")
         try: 
             int(user_input) <= len(cls.itineraries)
             os.system('clear')
-            print("*******************************************************************************)
-            cls.display_format(user_input)
-            print(f"Link to Booking: {cls.itineraries[int].deep_link}")
-            
+            print("*******************************************************************************")
+            cls.display_format(int(user_input))
+            print(f"Link to Booking: {cls.itineraries[1].deep_link}")
+            print("*******************************************************************************")
+        except:
+            cls.choose_flight()
 
     
     @classmethod
@@ -38,22 +40,4 @@ class Itinerary():
         Transfers : {cls.itineraries[num].transfer}
 *******************************************************************************""")
 
-
-
-    @classmethod
-    def choice(cls, int):
-        os.system('clear')
-        print(f"""*******************************************************************************
-{int}   Cost: {cls.itineraries[int].price}
-    From: {cls.itineraries[int].origin}    at    {cls.itineraries[int].departure_time}
-    To : {cls.itineraries[int].destination}    at    {cls.itineraries[int].arrival_time}
-    Extra info:
-        Route: {cls.itineraries[int].routes}
-        Airline Carrier : {cls.itineraries[int].airlines}
-        Duration: {cls.itineraries[int].duration}
-        Transfers : {cls.itineraries[int].transfer}
-        
-Link to Booking: {cls.itineraries[int].deep_link}        
-*******************************************************************************""")
-        
         
