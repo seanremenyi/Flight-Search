@@ -10,17 +10,35 @@ class Itinerary():
         cls.count +=1
     
     @classmethod
-    def price_sort(cls):
+    def list_results(cls):
         for items in cls.itineraries:
-            print(f"""{items}   Cost: {cls.itineraries[items].price}
-    From: {cls.itineraries[items].origin}    at    {cls.itineraries[items].departure_time}
-    To : {cls.itineraries[items].destination}    at    {cls.itineraries[items].arrival_time}
+            cls.display_format(items)
+
+    @classmethod
+    def choice(cls):
+        user_input = input("Which Flight would you like to choose?\nEnter the reference number")
+        try: 
+            int(user_input) <= len(cls.itineraries)
+            os.system('clear')
+            print("*******************************************************************************)
+            cls.display_format(user_input)
+            print(f"Link to Booking: {cls.itineraries[int].deep_link}")
+            
+
+    
+    @classmethod
+    def display_format(cls, num):
+            print(f"""{num}   Cost: {cls.itineraries[num].price}
+    From: {cls.itineraries[num].origin}    at    {cls.itineraries[num].departure_time}
+    To : {cls.itineraries[num].destination}    at    {cls.itineraries[num].arrival_time}
     Extra info:
-        Route: {cls.itineraries[items].routes}
-        Airline Carrier : {cls.itineraries[items].airlines}
-        Duration: {cls.itineraries[items].duration}
-        Transfers : {cls.itineraries[items].transfer}
+        Route: {cls.itineraries[num].routes}
+        Airline Carrier : {cls.itineraries[num].airlines}
+        Duration: {cls.itineraries[num].duration}
+        Transfers : {cls.itineraries[num].transfer}
 *******************************************************************************""")
+
+
 
     @classmethod
     def choice(cls, int):
