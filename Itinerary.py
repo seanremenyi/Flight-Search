@@ -3,6 +3,7 @@ import os
 class Itinerary():
     itineraries = {}
     count = 1
+    last_input = 0
     
     @classmethod
     def add_flight(cls, flight):
@@ -13,6 +14,7 @@ class Itinerary():
     def list_results(cls):
         for items in cls.itineraries:
             cls.display_format(items)
+            
 
     @classmethod
     def choose_flight(cls):
