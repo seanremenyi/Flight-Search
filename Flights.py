@@ -12,8 +12,6 @@ class Flight():
         self.arrival_time = self.convert_timestamp(self.arrival_time_UTC)
         self.deep_link = self.strip_info("deep_link")
         self.duration= self.strip_info("fly_duration")
-        self.transfer = self.strip_info("transfers")
-        self.routes= self.strip_info("routes")
         self.airlines= self.strip_info("airlines")
         
     def strip_info(self, arg):
