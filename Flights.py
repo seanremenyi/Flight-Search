@@ -3,7 +3,7 @@ import datetime, pytz
 class Flight():
     def __init__(self, flight_data):
         self.flight_data = flight_data
-        self.get_origin()
+        self.origin = self.strip_info("cityFrom")
         self.get_destination()
         self.get_price()
         self.get_departure_time_UTC()
@@ -15,6 +15,9 @@ class Flight():
         self.get_transfers()
         self.get_routes()
         self.get_airlines()
+        
+    def strip_info(self, arg):
+        return self.flight_data[arg]
         
     def get_origin(self):
         self.origin = f'{self.flight_data["cityFrom"]}, {self.flight_data["countryFrom"]["name"]}' 
