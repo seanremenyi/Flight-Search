@@ -37,5 +37,8 @@ class Query():
     def api_call(self):
         response = requests.get(f"https://api.skypicker.com/flights?flyFrom={self.origin}&to={self.destination}&curr=AUD&dateFrom={self.starting_range}&dateTo={self.ending_range}&partner=picky&v=3")
         data =  json.loads(response.text)
-        return data["data"]            
+        return data["data"]    
+        
+    def code_lookup(self):
+        
         
