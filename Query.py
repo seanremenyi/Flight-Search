@@ -9,7 +9,7 @@ class Query():
         print("Country Codes must be the IATA code for the Airport\nIATA codes are the corresponding 3 Capitalized letters\n")
         origin= IataCode("Enter your Origin city:")
         self.origin = origin.iata_code
-        destination = IataCode("Enter your Destinatin city:")
+        destination = IataCode("Enter your Destination city:")
         self.destination = destination.iata_code
         print("\n\nSearch Flights among a range of dates\nDates are of the format dd/mm/yyyy\n")
         self.starting_range = self.get_date("Look for Flights from the:")

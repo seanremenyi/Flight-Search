@@ -1,4 +1,5 @@
 import json
+import os
 
 
 class IataCode():
@@ -9,7 +10,7 @@ class IataCode():
         self.iata_code = self.get_code()
         
     def city_choice(self, prompt):
-        user_input = input(prompt).capitalize()
+        user_input = input(f"\n{prompt}\n").capitalize()
         return user_input
     
     def load_iata_codes(self):
@@ -37,18 +38,18 @@ class IataCode():
     def display_options(self, options):
         try:
             if options == {}:
+                os.system('clear')
                 print("Couldn't find any results")
                 return self.get_code()
             else:
-                print("Did you mean one of the following options?")
+                print("Did you mean one of the following options?\n")
                 for choices in options:
                     print(f"{choices} :  {options[choices][0]}, {options[choices][1][0]}")
         except:
             pass
         
     def choice(self, options):
-        print("Choose one of the following options by inputing the reference number or input enter to go back to search""")
-        user_input = input("number or back")
+        user_input = input("\nChoose one of the following options\nInput reference number on the left\nOr hit enter to search again\n")
         try:
             return options[int(user_input)][1][1]
         except:
