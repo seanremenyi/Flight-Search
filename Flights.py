@@ -3,30 +3,30 @@ import datetime, pytz
 class Flight():
     def __init__(self, flight_data):
         self.flight_data = flight_data
-        self.origin = self.strip_info("cityFrom")
-        self.get_destination()
-        self.get_price()
-        self.get_departure_time_UTC()
-        self.get_departure_time()
-        self.get_arrival_time_UTC()
-        self.get_arrival_time()
-        self.get_deep_link()
-        self.get_duration()
-        self.get_transfers()
-        self.get_routes()
-        self.get_airlines()
+        self.origin = f'{self.strip_info("cityFrom")}, {self.strip_info("countryFrom")["name"]}'
+        self.destination =f'{self.strip_info("cityTo")}, {self.strip_info("countryTo")["name"]}'
+        self.price= self.strip_info("price")
+        self.departure_time_UTC = self.strip_info("dTimeUTC")
+        self.departure_time = self.convert_timestamp(self.departure_time_UTC)
+        self.arrival_time_UTC = self.strip_info("aTimeUTC")
+        self.arrival_time = self.convert_timestamp(self.arrival_time_UTC)
+        self.deep_link = self.strip_info("deep_link")
+        self.duration= self.strip_info("fly_duration")
+        self.transfer = self.strip_info("transfers")
+        self.routes= self.strip_info("routes")
+        self.airlines= self.strip_info("airlines")
         
     def strip_info(self, arg):
         return self.flight_data[arg]
         
-    def get_origin(self):
-        self.origin = f'{self.flight_data["cityFrom"]}, {self.flight_data["countryFrom"]["name"]}' 
+    # def get_origin(self):
+    #     self.origin = f'{self.flight_data["cityFrom"]}, {self.flight_data["countryFrom"]["name"]}' 
     
-    def get_destination(self):
-        self.destination = f'{self.flight_data["cityTo"]}, {self.flight_data["countryTo"]["name"]}' 
+    # def get_destination(self):
+    #     self.destination = f'{self.flight_data["cityTo"]}, {self.flight_data["countryTo"]["name"]}' 
 
-    def get_price(self):
-        self.price = self.flight_data["price"]
+    # def get_price(self):
+    #     self.price = self.flight_data["price"]
         
     @staticmethod
     def convert_timestamp(timestamp):
@@ -34,32 +34,40 @@ class Flight():
         conv_timestamp=timestamp.astimezone(pytz.timezone("Australia/Melbourne"))
         return conv_timestamp.strftime('%d/%m/%y %H:%M:%S')
         
-    def get_departure_time_UTC(self):
-        self.departure_time_UTC= self.flight_data['dTimeUTC']
+    # def get_departure_time_UTC(self):
+    #     self.departure_time_UTC= self.flight_data['dTimeUTC']
         
-    def get_departure_time(self):
-        self.departure_time = self.convert_timestamp(self.flight_data['dTimeUTC'])
+    # def get_departure_time(self):
+    #     self.departure_time = self.convert_timestamp(self.flight_data['dTimeUTC'])
 
-    def get_arrival_time_UTC(self):
-        self.arrival_time_UTC= self.flight_data['aTimeUTC']
+    # def get_arrival_time_UTC(self):
+    #     self.arrival_time_UTC= self.flight_data['aTimeUTC']
         
-    def get_arrival_time(self):
-        self.arrival_time = self.convert_timestamp(self.flight_data['aTimeUTC'])    
+    # def get_arrival_time(self):
+    #     self.arrival_time = self.convert_timestamp(self.flight_data['aTimeUTC'])    
 
-    def get_deep_link(self):
-        self.deep_link= self.flight_data["deep_link"]
+    # def get_deep_link(self):
+    #     self.deep_link= self.flight_data["deep_link"]
     
-    def get_duration(self):
-        self.duration = self.flight_data["fly_duration"]
+    # def get_duration(self):
+    #     self.duration = self.flight_data["fly_duration"]
         
-    def get_transfers(self):
-        if self.flight_data["transfers"] == []:
-            self.transfer = "No transfer"
-        else:
-            self.transfer = self.flight_data["transfers"]
+    # def get_transfers(self):
+    #     if self.flight_data["transfers"] == []:
+    #         self.transfer = "No transfer"
+    #     else:
+    #         self.transfer = self.flight_data["transfers"]
             
-    def get_routes(self):
-        self.routes = self.flight_data["routes"]
+    # def get_routes(self):
+    #     self.routes = self.flight_data["routes"]
 
-    def get_airlines(self):
-        self.airlines = self.flight_data["airlines"]
+    # def get_airlines(self):
+    #     self.airlines = self.flight_data["airlines"]
+        
+        
+        
+        
+        
+        
+        
+        

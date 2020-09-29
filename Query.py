@@ -24,11 +24,15 @@ class Query():
             datetime.datetime(int(year),int(month),int(day))
             return user_input
         except ValueError:
-            self.get_date(question)
+            print("Sorry can you try that again (remember format is dd/mm/yyyy)")
+            return self.get_date(question)
 
     
     def api_call(self):
-        response = requests.get(f"https://api.skypicker.com/flights?flyFrom={self.origin}&to={self.destination}&curr=AUD&dateFrom={self.starting_range}&dateTo={self.ending_range}&partner=picky&v=3")
-        data =  json.loads(response.text)
-        return data["data"]    
+        try:
+            response = requests.get(f"https://api.skypicker.com/flights?flyFrom={self.origin}&to={self.destination}&curr=AUD&dateFrom={self.starting_range}&dateTo={self.ending_range}&partner=picky&v=3")
+            data =  json.loads(response.text)
+            return data["data"]
+        except:
+            print("Sorry there's no flights for that date")
         
