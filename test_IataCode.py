@@ -1,12 +1,12 @@
-import unittest
-from unittest.mock import patch
-from IataCode import IataCode
+# import unittest
+# from unittest.mock import patch
+# from IataCode import IataCode
 
-class TestIataCodeClass(unittest.TestCase):
-    @patch('IataCode.self.city_choice', return_value='python')
-    def test_city_choice(self, input):
-        """Test city_choice()"""
-        self.assertTrue("Python")
+# class TestIataCodeClass(unittest.TestCase):
+#     @patch('IataCode.self.city_choice', return_value='python')
+#     def test_city_choice(self, input):
+#         """Test city_choice()"""
+#         self.assertTrue("Python")
         
 
 
