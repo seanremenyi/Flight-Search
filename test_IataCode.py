@@ -1,29 +1,27 @@
-# import unittest
-# from unittest.mock import patch
-# from IataCode import IataCode
+from unittest.mock import patch
+import unittest
+from IataCode import IataCode
+from mock import patch
 
-# class TestIataCodeClass(unittest.TestCase):
-#     @patch('IataCode.self.city_choice', return_value='python')
-#     def test_city_choice(self, input):
-#         """Test city_choice()"""
-#         self.assertTrue("Python")
+class TestIataCodeClass(unittest.TestCase):
+    def test_IataCode_methods(self):
+        with patch.object(IataCode, "__init__", lambda x, y: None):
+            test_object=IataCode("what")
         
+            test_values = test_object.load_iata_codes()
+        
+            self.assertEqual(type(test_values), dict)
+            self.assertEqual(test_values["Aarhus"][1], "AAR")
+            self.assertEqual(test_values["Bintulu"][1], "BTU")
+            self.assertEqual(test_values['Whale Cove, NT'][1], "YXN")
 
+            test_options = test_object.multiple_options("montreal")
+            print(test_options) 
+    
+    # def test_init(self):
 
+    #     with patch.object(IataCode, "__init__", lambda x, y: None):
+    #         c=IataCode("what")
+    #         print(c.__dict__)
 
-
-        # @patch('IataCode.self.get_code', return_value='python')
-        # def test_get_iata(self, input):
-        #     self.assertEqual(answer(), 'you entered yes')
-    #         question.title
-    #         question.options
-    #         question.answer
-    #     except Exception as error:
-    #         self.assertTrue(False, error)
-
-    # def test_is_correct(self):
-    #     """Test quiz.is_correct()"""
-    #     question = Question("a", [1,2,3], 3)
-    #     self.assertTrue(question.is_correct(3))
-    #     self.assertFalse(question.is_correct(2))
-    #     self.assertFalse(question.is_correct(1))
+  
