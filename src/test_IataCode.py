@@ -1,4 +1,3 @@
-from unittest.mock import patch
 import unittest
 from IataCode import IataCode
 from mock import patch
@@ -6,7 +5,7 @@ from mock import patch
 class TestIataCodeClass(unittest.TestCase):
     def test_IataCode_methods(self):
         with patch.object(IataCode, "__init__", lambda x, y: None):
-            test_object=IataCode("which city?")
+            test_object = IataCode("which city?")
         
             test_values = test_object.load_iata_codes()
         
