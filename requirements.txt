@@ -4,8 +4,6 @@ flake8==3.8.3
 idna==2.10
 mccabe==0.6.1
 mock==4.0.2
-module==0.0.4
-pkg-resources==0.0.0
 pycodestyle==2.6.0
 pyflakes==2.2.0
 pytz==2020.1
