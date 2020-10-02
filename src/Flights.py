@@ -4,6 +4,7 @@ from typing import Union
 
 
 class Flight():
+    """initialize Flight object with information from Json response"""
     def __init__(self, flight_data: dict) -> None:
         self.flight_data = flight_data
         self.origin_city = self.strip_info("cityFrom")
@@ -22,10 +23,12 @@ class Flight():
         self.airlines = self.strip_info("airlines")
 
     def strip_info(self, arg: str) -> Union[dict, str]:
+        """Get information from dictionary"""
         return self.flight_data[arg]
 
     @staticmethod
     def convert_timestamp(timestamp: int) -> str:
+        """Convert UTC timestamps to Australian time"""
         timestamp = datetime.datetime.fromtimestamp(timestamp)
         time_zone = pytz.timezone("Australia/Melbourne")
         conv_timestamp = timestamp.astimezone(time_zone)
@@ -33,4 +36,5 @@ class Flight():
 
     @staticmethod
     def convert_to_price(price: int) -> str:
+        """Convert price int to AUD format"""
         return f"${'{:.2f}'.format((price))} AUD"

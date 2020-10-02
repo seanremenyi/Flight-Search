@@ -1,7 +1,5 @@
 import unittest
 from mock import patch
-import sys
-sys.path.append('../')
 from Query import Query
 
 class TestQueryClass(unittest.TestCase):

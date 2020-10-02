@@ -1,8 +1,6 @@
 import unittest
 import requests
 import json
-# import sys
-# sys.path.append('../src')
 from Flights import Flight
 from Itinerary import Itinerary
 

@@ -1,7 +1,5 @@
 from mock import patch
 import unittest
-# import sys
-# sys.path.append('../src')
 from IataCode import IataCode
 
 
