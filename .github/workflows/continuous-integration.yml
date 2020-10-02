@@ -36,7 +36,7 @@ jobs:
           script: |
             rm -rf Flight-Search
             git clone https://github.com/seanremenyi/Flight-Search.git
-            python3.8 -m /home/flight/Flight-Search/venv
+            python3.8 -m venv /home/flight/Flight-Search/venv
             /home/flight/Flight-Search/venv/bin/pip install -r requirements.txt
           # python3.8 -m venv /home/ubuntu/SeanRemenyi_T2A3/venv
           # /home/github-actions/SeanRemenyi_T2A3/venv/bin/pip3.8 install -r /home/github-actions/squiz/requirements.txt
