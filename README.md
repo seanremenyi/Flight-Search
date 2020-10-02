@@ -160,12 +160,16 @@ This application uses
 
 ##### flake8
 This is used for conforming to PEP8 conventions
+##### pycodestyle
+This is used for conforming to PEP8 conventions
 ##### mock
 This is for testing to mock user inputs
 ##### pytz
 This is to convert UTC time to Australian
 ##### requests
 This is to make Get requests to our API
+
+As well as the builtins for python3.8 when installed as specified in the installation section. 
 
 ## Process
 
