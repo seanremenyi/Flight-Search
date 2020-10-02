@@ -142,6 +142,11 @@ There is a CI/CD Pipeline that uses github actions. This pipeline goes through a
 
 For the continuous deployment, my workflow deploys the code onto an ec2 instance. It removes the old code base and clones the repo on the instance to have the current code.
 
+
+## Things to Note
+
+The kiwi.com API is a free service, therefore before booking any flights, the details should be double checked before finalizing (once you've reached the booking page).
+
 ## Process
 
 ![flowchart](./docs/24-09-2020.PNG)
@@ -150,24 +155,4 @@ For the continuous deployment, my workflow deploys the code onto an ec2 instance
 ![flowchart](./docs/01-10-2020(1).PNG)
 ![flowchart](./docs/02-10-2020.PNG)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Hope You Enjoy!

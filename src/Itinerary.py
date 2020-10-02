@@ -28,13 +28,15 @@ class Itinerary():
     def choose_flight(cls) -> None:
         """Gives user the link for the flight they choose"""
         user_input = input("""\n\nWhich Flight would you like to choose?
-        Enter the reference number\n""")
+Enter the reference number\n""")
         try:
             int(user_input) <= len(cls.itineraries)
             os.system('clear')
             cls.seperation()
             cls.display_format(int(user_input))
             print(f"Link to Booking: {cls.itineraries[1].deep_link}")
+            cls.seperation()
+            print("\nAlways check the details, they can change on a dime\n")
             cls.seperation()
         except:
             cls.choose_flight()

@@ -37,4 +37,7 @@ class Flight():
     @staticmethod
     def convert_to_price(price: int) -> str:
         """Convert price int to AUD format"""
-        return f"${'{:.2f}'.format((price))} AUD"
+        if price < 10000:
+            return f"${'{:.2f}'.format((price))} AUD"
+        else:
+            return f"${'{:.2f}'.format((price/10000))} AUD"

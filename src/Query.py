@@ -38,12 +38,7 @@ Dates are of the format dd/mm/yyyy\n""")
     def api_call(self) -> dict:
         """API call with Query's attributes"""
         try:
-            response = requests.get(
-                "https://api.skypicker.com/"
-                f"flights?flyFrom={self.origin}",
-                f"&to={self.destination}&curr=AUD&dateFrom=",
-                f"{self.starting_range}",
-                f"&dateTo={self.ending_range}&partner=picky&v=3")
+            response = requests.get(f"https://api.skypicker.com/flights?flyFrom={self.origin}&to={self.destination}&curr=AUD&dateFrom={self.starting_range}&dateTo={self.ending_range}&partner=picky&v=3")
             data = json.loads(response.text)
             return data["data"]
         except:
