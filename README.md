@@ -5,9 +5,9 @@ I created this application for anyone wanting to book a flight. The algorithm wa
 
 ## Installing
 
-##### For the App,
+##### If using Ubuntu,
 
-1. Create a directory to clone the git repo into
+1. Create a new directory and cd into it
 2. Clone git repo
 3. If not running python 3.8, run the following bash commands
     1. `sudo apt update`
@@ -16,11 +16,18 @@ I created this application for anyone wanting to book a flight. The algorithm wa
     1. `sudo apt-get install python3-pip`
     2. `sudo apt-get install python3-venv`
     3. `python3 -m venv venv`
-    4. `python source venv/bin/activate`
+    4. `source venv/bin/activate`
 5. Install the modules in requirements.txt
-    1. `pip install -r requirements.txt`
+    1. `cd Flight-Search`
+    2. `pip install -r requirements.txt`
 6. Run the Program
-    1. `python main.py`
+    1. `cd src`
+    2. `python main.py`
+
+### In Development
+
+Currently looking into replacing API with one that's more accurate with returned flight info.
+
 
 ## Applying Solution
 
@@ -146,6 +153,8 @@ For the continuous deployment, my workflow deploys the code onto an ec2 instance
 ## Things to Note
 
 The kiwi.com API is a free service, therefore before booking any flights, the details should be double checked before finalizing (once you've reached the booking page).
+
+
 
 ## Process
 
