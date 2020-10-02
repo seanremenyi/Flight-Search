@@ -1,4 +1,5 @@
 import os
+from Flights import Flight
 
 
 class Itinerary():
@@ -6,7 +7,7 @@ class Itinerary():
     count = 1
 
     @classmethod
-    def add_flight(cls, flight):
+    def add_flight(cls, flight: Flight) -> None:
         cls.itineraries[cls.count] = flight
         cls.count += 1
 

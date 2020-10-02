@@ -52,8 +52,8 @@ class IataCode():
 
     def choice(self, options: dict) -> str:
         user_input = input("""\nChoose one of the following options
-        Input reference number on the left
-        Or hit enter to search again\n""")
+Input reference number on the left
+Or hit enter to search again\n""")
         try:
             return options[int(user_input)][1][1]
         except:
