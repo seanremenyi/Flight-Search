@@ -115,17 +115,59 @@ class Itinerary():
 
 The algorithm then formats the information in an easily readable way for the user and prints this to the screen. This shows off all the relevant flight information as well as the number value refernce.
 
-![city display](docs/snip_flights.PNG)
+![flights display](docs/snip_flights.PNG)
 
 The user then pick an option from the ones that are displayed by inputting the orresponding number. This number is the key vaue for the flight object in the dictionary we created as a class attribute for the Itinierary object. When the User selects an option it will be printed out to the screen with a deep link corresponding to that flight.
 
-![city display](./docs/snip_link.PNG)
+![links display](./docs/snip_link.PNG)
 
 This link will then direct the user to the kiwi.com booking site for all the relevant information.
 
-![city display](./docs/snip_kiwi.PNG)
+![kiwi.com display](./docs/snip_kiwi.PNG)
 
 ## Flowchart
 
-![city display](./docs/Flight_search.png)
+![flowchart](./docs/Flight_search.png)
+
+## Testing
+
+This application has automated tests created by me and can be found in the test folder in src.
+
+There is a test module for the individual modules other than main.py.
+
+
+## CI/CD Pipeline
+
+There is a CI/CD Pipeline that uses github actions. This pipeline goes through all my tests to make sure any new code doesn't break any code for continuous integration.
+
+For the continuous deployment, my workflow deploys the code onto an ec2 instance. It removes the old code base and clones the repo on the instance to have the current code.
+
+## Process
+
+![flowchart](./docs/24-09-2020.PNG)
+![flowchart](./docs/25-09-2020.PNG)
+![flowchart](./docs/01-10-2020.PNG)
+![flowchart](./docs/01-10-2020(1).PNG)
+![flowchart](./docs/02-10-2020.PNG)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
