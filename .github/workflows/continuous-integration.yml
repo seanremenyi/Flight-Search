@@ -29,9 +29,7 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: 50.17.74.153
-          #User you created on the EC2 instance
           username: flight
-          #Name of the secrets variable where you put your secret key
           key: ${{ secrets.SSH_KEY }}
           port: 22
           script: |
@@ -39,5 +37,3 @@ jobs:
             git clone https://github.com/seanremenyi/Flight-Search.git
             python3.8 -m venv /home/flight/Flight-Search/venv
             /home/flight/Flight-Search/venv/bin/pip install -r Flight-Search/requirements.txt
-          # python3.8 -m venv /home/ubuntu/SeanRemenyi_T2A3/venv
-          # /home/github-actions/SeanRemenyi_T2A3/venv/bin/pip3.8 install -r /home/github-actions/squiz/requirements.txt
