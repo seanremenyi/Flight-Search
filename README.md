@@ -154,7 +154,18 @@ For the continuous deployment, my workflow deploys the code onto an ec2 instance
 
 The kiwi.com API is a free service, therefore before booking any flights, the details should be double checked before finalizing (once you've reached the booking page).
 
+## Required packages
 
+This application uses
+
+##### flake8
+This is used for conforming to PEP8 conventions
+##### mock
+This is for testing to mock user inputs
+##### pytz
+This is to convert UTC time to Australian
+##### requests
+This is to make Get requests to our API
 
 ## Process
 
