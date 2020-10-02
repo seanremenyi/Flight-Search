@@ -127,5 +127,5 @@ This link will then direct the user to the kiwi.com booking site for all the rel
 
 ## Flowchart
 
-![city display](./Flight_search.png)
+![city display](./docs/Flight_search.png)
 
