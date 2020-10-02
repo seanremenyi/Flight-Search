@@ -55,7 +55,7 @@ If the spelling is incorrect the program will create a dictionary with numbers a
 
 The dictionary is then printed to the screen in an easily readable way for the user. 
 
-![city display](./docs/snip_origin.png)
+![city display](./docs/snip_origin.PNG)
 
 The user will be prompted to input a corresponding number for the city they would like. If the number is listed, the corresponding airport code for that city will be returned to the Query object as it's airport code attribute, otherwise the user will be asked to search again. If the spelling doesn't closely match any city, the user will be prompted to try searching again.
 
@@ -115,15 +115,15 @@ class Itinerary():
 
 The algorithm then formats the information in an easily readable way for the user and prints this to the screen. This shows off all the relevant flight information as well as the number value refernce.
 
-![city display](docs/snip_flights.png)
+![city display](docs/snip_flights.PNG)
 
 The user then pick an option from the ones that are displayed by inputting the orresponding number. This number is the key vaue for the flight object in the dictionary we created as a class attribute for the Itinierary object. When the User selects an option it will be printed out to the screen with a deep link corresponding to that flight.
 
-![city display](./docs/snip_link.png)
+![city display](./docs/snip_link.PNG)
 
 This link will then direct the user to the kiwi.com booking site for all the relevant information.
 
-![city display](./docs/snip_kiwi.png)
+![city display](./docs/snip_kiwi.PNG)
 
 ## Flowchart
 
