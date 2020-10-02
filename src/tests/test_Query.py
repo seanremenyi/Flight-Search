@@ -1,7 +1,7 @@
 import unittest
 from mock import patch
-import sys
-sys.path.append('../src')
+# import sys
+# sys.path.append('../src')
 from Query import Query
 
 class TestQueryClass(unittest.TestCase):
