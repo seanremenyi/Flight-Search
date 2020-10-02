@@ -29,7 +29,7 @@ I created this application for anyone wanting to book a flight. The algorithm wa
 Currently looking into replacing API with one that's more accurate with returned flight info.
 
 
-## Applying Solution
+## Applying a Solution
 
 The API call requires the following parameters:
 
@@ -168,8 +168,8 @@ This is for testing to mock user inputs
 This is to convert UTC time to Australian
 ##### requests
 This is to make Get requests to our API
-
-As well as the builtins for python3.8 when installed as specified in the installation section. 
+##### builtins for python3.8
+All of these can be installed by following the installation process outlined in the Installing section. 
 
 ## Process
 
