@@ -32,10 +32,9 @@ jobs:
           #User you created on the EC2 instance
           username: ubuntu
           #Name of the secrets variable where you put your secret key
-          key: $ssh_key
+          key: ${{ 'SSH_KEY' }}
           port: 22
           script: |
-            rm -rf squiz
             git clone https://github.com/seanremenyi/Flight-Search.git
-            python3.8 -m venv /home/ubuntu/SeanRemenyi_T2A3/venv
-            /home/github-actions/SeanRemenyi_T2A3/venv/bin/pip3.8 install -r /home/github-actions/squiz/requirements.txt
+          # python3.8 -m venv /home/ubuntu/SeanRemenyi_T2A3/venv
+          # /home/github-actions/SeanRemenyi_T2A3/venv/bin/pip3.8 install -r /home/github-actions/squiz/requirements.txt
