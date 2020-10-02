@@ -1,7 +1,7 @@
 # Flight Search
 
-## Purpose
-I created this application for anyone wanting to book a flight. The algorithm was developed to take inputs from a user, uses error handling to format the inputs in such a way that the program can communicate with the skypicker API to make a GET request with these inputs as parameters. The user can then pick one of the flights from the response and receive a deep link that will take you directly to the booking page for that flight.
+## Application
+I created this application for anyone wanting to book a flight. The program was written in and uses python3.8. The algorithm was developed to take inputs from a user, uses error handling to format the inputs in such a way that the program can communicate with the skypicker API developed by kiwi.com to make a GET request with these inputs as parameters. The user can then pick one of the flights from the response and receive a deep link that will take you directly to the booking page for that flight.
 
 ## Installing
 
@@ -29,7 +29,12 @@ I created this application for anyone wanting to book a flight. The algorithm wa
 Currently looking into replacing API with one that's more accurate with returned flight info.
 
 
-## Applying a Solution
+### Purpose
+
+There are many flight booking sites however for the most part they are bloated with a lot of unnecesary information as well as ads. This application will return all flights given a range of dates and 2 cities and will give you a link to directly book your ticket. 
+
+### Method (Input/output handling and class structure)
+
 
 The API call requires the following parameters:
 
@@ -66,7 +71,7 @@ The dictionary is then printed to the screen in an easily readable way for the u
 
 The user will be prompted to input a corresponding number for the city they would like. If the number is listed, the corresponding airport code for that city will be returned to the Query object as it's airport code attribute, otherwise the user will be asked to search again. If the spelling doesn't closely match any city, the user will be prompted to try searching again.
 
-The process is first for the Query's origin attribute but then repeated to obtain the Query's destination attribue.
+The process is first for the Query's origin attribute but then repeated to obtain the Query's destination attribute.
 
 Returning to the Query object, it will then need to initialize the date attributes. The user will be prompted to enter a date. The API call returns flights available between a range of dates so the user will need to input a date for the beginning and ending of the range they request. The parameter needed for the API call requires the date be of the format dd/mm/yyyy. The user will be reminded this. The algorithm will then use error handling to make sure integers we're inputed and using the datetime module, will check if the date is a real date (for example the user did not input month 20 in their input). If any of these errors occur the algorithm will remind the user of the format and ask again.
 
@@ -120,7 +125,9 @@ class Itinerary():
         cls.count += 1
 ```
 
-The algorithm then formats the information in an easily readable way for the user and prints this to the screen. This shows off all the relevant flight information as well as the number value refernce.
+If the API call doesn't return any flights or an error is thrown and no Flight objects got created or loaded into the dictionary. The program will print to the screen that no flights we're found and will exit the program. The user may then restart the program to try different search results.
+
+If everything works however, the algorithm then formats the information in an easily readable way for the user and prints this to the screen. This shows off all the relevant flight information as well as the number value refernce.
 
 ![flights display](docs/snip_flights.PNG)
 
@@ -158,17 +165,16 @@ The kiwi.com API is a free service, therefore before booking any flights, the de
 
 This application uses
 
-##### flake8
-This is used for conforming to PEP8 conventions
-##### pycodestyle
-This is used for conforming to PEP8 conventions
-##### mock
-This is for testing to mock user inputs
-##### pytz
-This is to convert UTC time to Australian
-##### requests
-This is to make Get requests to our API
-##### builtins for python3.8
+- **flake8** -Used for conforming to PEP8 conventions
+- **pycodestyle** - Used for conforming to PEP8 conventions
+- **mock** - Used for testing to mock user inputs
+- **pytz** - Used to convert UTC time to Australian time
+- **requests** - Used to make Get requests to our API
+- **Json** - Used to convert the Json object returned from our API get request 
+- **sys** - Used to exit the program
+- **os** - Used to clear the terminal
+- **unittest** - used for testing modules
+- **builtins for python3.8**
 All of these can be installed by following the installation process outlined in the Installing section. 
 
 ## Process
